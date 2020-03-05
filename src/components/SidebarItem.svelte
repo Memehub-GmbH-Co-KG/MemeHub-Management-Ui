@@ -16,6 +16,7 @@
         list-style-type: none;
         border-bottom: 1px solid var(--color-bg-a);
         background-color: var(--color-bg-b);
+        font-size: var(--font-size-l);
     }
     li:first-child {
         border-top: 1px solid var(--color-bg-a);

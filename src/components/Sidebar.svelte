@@ -13,8 +13,6 @@
     ul {
         padding: 1rem 0;
         margin: 0;
-        font-size: 1.8em;
-        font-weight: 300;
     }
 
 </style>
