@@ -18,6 +18,10 @@
 <Status />
 <Header class="header" />
 <Sidebar class="sidebar" />
-<main class="header"> 
-  <svelte:component this={$currentPage.component} />
+<main class="header">
+  {#if session}
+    <svelte:component this={$currentPage.component} />
+  {:else}
+    <TelegramWidget />
+  {/if}
 </main>
