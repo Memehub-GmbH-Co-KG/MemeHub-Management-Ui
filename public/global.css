@@ -75,3 +75,6 @@ h3 {
 .unavailable {
 	filter: opacity(0.9) brightness(.4);
 }
+input[type="button"]{
+	outline:none;
+ }

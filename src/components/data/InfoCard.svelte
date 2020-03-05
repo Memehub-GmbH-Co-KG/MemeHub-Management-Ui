@@ -44,7 +44,11 @@
 </style>
 
 <div on:click={click} class={activeClass}>
-    <small>{small}</small><br/>
-    <strong>{title}</strong><br/>
+    {#if small}
+        <small>{small}</small><br/>
+    {/if}
+    {#if title}
+        <strong>{title}</strong><br/>
+    {/if}
     <slot></slot>
 </div>

@@ -1,5 +1,7 @@
 <script>
     export let meme;
+
+    
 </script>
 
 <style>
