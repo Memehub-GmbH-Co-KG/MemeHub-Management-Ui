@@ -14,10 +14,6 @@
     }
 </script>
 
-<style>
-    
-</style>
-
 <InfoCard on:click={handleClick} small={user._id} title="@{user.username}" active={$currentUser === user}>
     <span class={firstNameClass}>{user.first_name || '(no first name)'}</span>
     <span class={lastNameClass}>{user.last_name || '(no last name)'}</span>

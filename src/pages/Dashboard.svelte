@@ -1,6 +1,7 @@
 <script>
     import Users from '../components/data/Users.svelte';
     import Memes from '../components/data/Memes.svelte';
+    import Logs from '../components/data/Logs.svelte';
 </script>
 <style>
     .dashboard {
@@ -17,5 +18,5 @@
 <div class="dashboard">
     <Users />
     <Memes />
-    <div>3rd row</div>
+    <Logs />
 </div>
