@@ -1,48 +1,24 @@
 <script>
     import { currentUser } from '../../lib/users.js';
+    import InfoCard from './InfoCard.svelte'
     export let user;
 
-    $: _id = user._id;
-    $: first_name = user. first_name;
-    $: last_name = user.last_name;
-    $: username = user.username;
-    $: firstNameClass = first_name ? '' : 'unavailable';
-    $: lastNameClass = last_name ? '' : 'unavailable';
-    $: activeClass = $currentUser._id === _id ? 'active' : '';
+    $: firstNameClass = user.first_name ? '' : 'unavailable';
+    $: lastNameClass = user.last_name ? '' : 'unavailable';
 
     function handleClick() {
+        if ($currentUser === user)
+            return currentUser.set({});
+        
         currentUser.set(user);
     }
 </script>
 
 <style>
-    div {
-        padding: 1em;
-        font-family: 'Courier New', Courier, monospace;
-        line-height: 1.5em;
-        border-bottom: 1px solid var(--color-bg-a);
-        background-color: var(--color-bg-b);
-        color: var(--color-ft-b);
-    }
-    div:hover {
-        filter: brightness(1.1);
-        cursor: pointer;
-    }
-    div.active {
-        background-color: var(--color-a);
-    }
-    small {
-        font-size: var(--font-size-xs);
-        color: var(--color-ft-b);
-    }
-    .unavailable {
-        filter: opacity(0.9) brightness(.4);
-    }
+    
 </style>
 
-<div on:click={handleClick} class={activeClass}>
-    <small>{_id}</small><br/>
-    <strong>@{username}</strong><br/>
-    <span class={firstNameClass}>{first_name || '(no first name)'}</span>
-    <span class={lastNameClass}>{last_name || '(no last name)'}</span>
-</div>
+<InfoCard on:click={handleClick} small={user._id} title="@{user.username}" active={$currentUser === user}>
+    <span class={firstNameClass}>{user.first_name || '(no first name)'}</span>
+    <span class={lastNameClass}>{user.last_name || '(no last name)'}</span>
+</InfoCard>

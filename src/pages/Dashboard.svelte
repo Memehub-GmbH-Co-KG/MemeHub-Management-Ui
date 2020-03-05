@@ -1,5 +1,6 @@
 <script>
     import Users from '../components/data/Users.svelte';
+    import Memes from '../components/data/Memes.svelte';
 </script>
 <style>
     .dashboard {
@@ -8,12 +9,13 @@
         grid-template-areas: "users memes other";
 
         width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 </style>
-
-<h1>Dashboard</h1>
 <div class="dashboard">
     <Users />
-    <div>2nd row</div>
+    <Memes />
     <div>3rd row</div>
 </div>

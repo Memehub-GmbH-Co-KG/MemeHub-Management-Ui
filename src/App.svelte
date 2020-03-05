@@ -13,6 +13,7 @@
   main {
     grid-area: main;
     background-color: var(--color-bg-a);
+    overflow-y: hidden;
   }
 </style>
 <Status />
