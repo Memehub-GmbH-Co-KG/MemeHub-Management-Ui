@@ -19,7 +19,7 @@
 <Status />
 <Header class="header" />
 <Sidebar class="sidebar" />
-<main class="header">
+<main >
   {#if session}
     <svelte:component this={$currentPage.component} />
   {:else}
