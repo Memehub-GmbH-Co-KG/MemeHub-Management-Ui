@@ -2,18 +2,33 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+
+	--color-a: #d15d1f;
+	--color-b: #2c343a;
+	--color-ft-a: white;
+	--color-ft-b: #eee;
+	--color-bg-a: #15191c;
+	--color-bg-b: #22282c;
 }
 
 body {
-	color: #333;
+	color: var(--color-ft-a);
+	background-color: var(--color-bg-a);
 	margin: 0;
-	padding: 8px;
+	padding: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-rows: 3rem auto;
+    grid-template-areas: 
+      "status header"
+      "sidebar main";
 }
 
 a {
-	color: rgb(0,100,200);
+	color: var(--color-ft-b);
 	text-decoration: none;
 }
 

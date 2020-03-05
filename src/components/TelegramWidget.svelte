@@ -5,10 +5,15 @@
   if (id) requestToken();
 
   async function requestToken() {
-    const result = await fetch(`SERVER_HOST/login${window.location.search}`);
-    const session = await result.text();
-    window.localStorage.setItem('session', session);
-    window.location.search = '';
+    try {
+      const result = await fetch(`SERVER_HOST/login${window.location.search}`);
+      const session = await result.text();
+      window.localStorage.setItem('session', session);
+      window.location.search = '';
+    }
+    catch (error) {
+      console.log('Cannot get session from server', error);
+    }
   }
 </script>
 

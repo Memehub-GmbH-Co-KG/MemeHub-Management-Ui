@@ -1,43 +1,23 @@
 <script>
   import TelegramWidget from './components/TelegramWidget.svelte';
   import HelloWorld from './components/HelloWorld.svelte';
+  import Header from "./components/Header.svelte";
+  import Sidebar from "./components/Sidebar.svelte";
+  import Status from "./components/Status.svelte";
+  import { currentPage } from './lib/pages';
 
   const session = window.localStorage.getItem('session');
 </script>
 
 <style>
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+    grid-area: main;
+    background-color: var(--color-bg-a);
   }
 </style>
-
-<main>
-  <h1>MemeHub Management Console</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
-  {#if session}
-    <span>Session: {session}</span>
-    <HelloWorld />
-  {:else}
-    <TelegramWidget />
-  {/if}
+<Status />
+<Header class="header" />
+<Sidebar class="sidebar" />
+<main class="header"> 
+  <svelte:component this={$currentPage.component} />
 </main>
