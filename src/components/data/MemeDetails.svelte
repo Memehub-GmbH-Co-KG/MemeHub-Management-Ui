@@ -1,4 +1,5 @@
 <script>
+    import MemeActions from '../MemeActions.svelte';
     export let meme;
 
     
@@ -24,6 +25,8 @@
 
 <div>
     {#if meme._id}
+        <h2>Actions</h2>
+            <MemeActions {meme} />
         <h2>Raw Data</h2>
         <pre>{JSON.stringify(meme, null, 2)}</pre>
     {:else}

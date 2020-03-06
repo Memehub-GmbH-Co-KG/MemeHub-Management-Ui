@@ -38,4 +38,22 @@ export function getMoreMemes() {
     
 }
 
+export async function markMemeAsRepost(memeId, isRepost) {
+    try {
+        const res = await fetch(`SERVER_HOST/memes/${memeId}/repost`, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                session: window.localStorage.getItem('session')
+            },
+            body: JSON.stringify({ isRepost })
+        });
+        if (!res.ok)
+            throw 'Request failed'
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
 getMoreMemes();
