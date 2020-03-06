@@ -34,7 +34,7 @@
     }
 </style>
 
-<div>
+<div class="scrollbar">
     {#each $memes as meme (meme._id)}
         <MemeInfoCard {meme} />
     {/each}
