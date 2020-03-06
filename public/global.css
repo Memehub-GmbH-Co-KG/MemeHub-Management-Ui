@@ -95,3 +95,24 @@ h3 {
 input[type="button"]{
 	outline:none;
  }
+
+button {
+	background-color: var(--color-a);
+	color: var(--color-ft-b);
+	border: none;
+	font-size: var(--font-size-l);
+	padding: 1rem 1.3rem;
+ }
+
+button:hover {
+	cursor: pointer;
+	filter: brightness(1.2);
+}
+button:active {
+	filter: brightness(0.9);
+}
+button:hover, button:active, button:focus, button::-moz-focus-inner {
+	transform: none;
+	outline: none;
+	border: none;
+}
