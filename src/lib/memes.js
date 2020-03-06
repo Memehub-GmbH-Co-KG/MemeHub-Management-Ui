@@ -11,7 +11,7 @@ export function getMoreMemes() {
     memes.subscribe(async currentMemes => {
         try {
             let query = '';
-            const oldest = currentMemes.reverse().find(m => m.post_date);
+            const oldest = currentMemes.slice().reverse().find(m => m.post_date);
             if (oldest) query += `?olderThan=${oldest.post_date}`;
 
             const res = await fetch(`SERVER_HOST/memes${query}`, {
@@ -21,12 +21,7 @@ export function getMoreMemes() {
             });
             const newMemes = await res.json();
             console.log("got memes", newMemes);
-            memes.update(memes => {
-                for (const meme of newMemes) {
-                    memes.push(meme);
-                }
-                return memes;
-            });
+            memes.update(memes => memes.concat(newMemes));
         }
         catch (error) {
             console.error('cannot get memes', error);
