@@ -20,18 +20,16 @@
         flex-grow: 1;
         flex-basis: 50%;
     }
+    img {
+        width: 6rem;
+        height: 6rem;
+    }
 </style>
 
 <InfoCard on:click={handleClick} small="{meme.post_date} - {meme.type}" title="@user" active={$currentMeme === meme}>
     <div class="split">
         <div>
-            {#if meme.votes && Object.keys(meme.votes).length > 0}
-            {#each Object.keys(meme.votes) as vote}
-                <span>{vote}: {meme.votes[vote].length}</span><br/>
-            {/each}
-            {:else}
-                <span class="unavailable">(no votes)</span>
-            {/if}
+            <img src="memes/{meme.image.path}" alt="meme"/>
         </div>
         <div>
             {#if meme.categories && meme.categories.length > 0}
