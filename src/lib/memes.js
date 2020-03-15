@@ -20,7 +20,6 @@ export function getMoreMemes() {
                 }
             });
             const newMemes = await res.json();
-            console.log("got memes", newMemes);
             memes.update(memes => memes.concat(newMemes));
         }
         catch (error) {

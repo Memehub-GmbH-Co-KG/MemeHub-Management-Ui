@@ -1,9 +1,9 @@
 <script>
     import { createEventDispatcher } from 'svelte';
 
-    export let small;
-    export let title
-    export let active;
+    export let small = '';
+    export let title = '';
+    export let active = '';
 
     $: activeClass = active ? 'active' : '';
     const dispatch = createEventDispatcher();

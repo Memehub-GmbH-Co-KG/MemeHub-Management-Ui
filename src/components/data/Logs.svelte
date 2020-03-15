@@ -4,10 +4,10 @@
 </script>
 
 <style>
-div {
-    overflow-y: auto;
-    margin: 0 1em;
-}
+    div {
+        overflow-y: auto;
+        margin: 0 1em;
+    }
 </style>
 
 <div>
