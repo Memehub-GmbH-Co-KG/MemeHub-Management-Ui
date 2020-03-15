@@ -2,6 +2,7 @@ import { writable } from 'svelte/store';
 
 import Dashboard from '../pages/Dashboard.svelte';
 import Memes from '../pages/Memes.svelte';
+import Logs from '../pages/Logs.svelte';
 import Users from '../pages/Users.svelte';
 
 export const pages = [
@@ -9,6 +10,11 @@ export const pages = [
         id: 'dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+    {
+        id: 'logs',
+        name: 'Logs',
+        component: Logs
     },
     {
         id: 'memes',

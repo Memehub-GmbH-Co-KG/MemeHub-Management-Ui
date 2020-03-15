@@ -1,6 +1,8 @@
 <script>
     import { logs } from '../../lib/logs.js';
     import InfoCard from './InfoCard.svelte'
+
+    let currentLog = undefined;
 </script>
 
 <style>

@@ -3,9 +3,8 @@
 
     export let small = '';
     export let title = '';
-    export let active = '';
+    export let active = false;
 
-    $: activeClass = active ? 'active' : '';
     const dispatch = createEventDispatcher();
 
     function click(e) {
@@ -43,7 +42,7 @@
     }
 </style>
 
-<div on:click={click} class={activeClass}>
+<div on:click={click} class:active={active}>
     {#if small}
         <small>{small}</small><br/>
     {/if}
